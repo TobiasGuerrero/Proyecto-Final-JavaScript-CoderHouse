@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Noto+Sans:wght@300;600;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comic Neue", cursive;
+  font-family: "Noto Sans", sans-serif;
+}
+
+body {
+  background-color: #283546;
+  padding: 1rem;
+}
+
+header {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+  border: solid;
+  background-color: white;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 900px) {
+  header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+header a {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+header a img {
+  height: 5rem;
+  max-width: 100%;
+}
+header div {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (min-width: 900px) {
+  header div {
+    width: auto;
+  }
+}
+header div button {
+  background-color: transparent;
+  margin: 1rem;
+  border: 0;
+}
+header div button svg {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+@media screen and (min-width: 900px) {
+  header div button svg {
+    display: none;
+  }
+}
+header div .button__x {
+  display: none;
+}
+header div .button__x.activo {
+  display: block;
+}
+@media screen and (min-width: 900px) {
+  header div .button__x.activo {
+    display: none;
+  }
+}
+header div .button__menu.activo {
+  display: none;
+}
+header div .carrito {
+  margin-right: 1.5rem;
+  height: 3rem;
+}
+header nav {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 0vh;
+  width: 100%;
+  transition: all 1s ease;
+  overflow: hidden;
+}
+@media screen and (min-width: 900px) {
+  header nav {
+    height: auto;
+  }
+}
+header nav ul {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+@media screen and (min-width: 900px) {
+  header nav ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1400px) {
+  header nav ul {
+    gap: 1.5rem;
+  }
+}
+header nav ul li {
+  padding: 0.2rem;
+  list-style: none;
+  font-size: x-large;
+}
+@media screen and (min-width: 900px) {
+  header nav ul li {
+    font-size: x-large;
+    border-left: solid #283546;
+    border-right: solid #283546;
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (min-width: 1400px) {
+  header nav ul li {
+    font-size: xx-large;
+  }
+}
+header nav ul li:hover {
+  color: #21a628;
+}
+header nav ul li:hover a {
+  color: #21a628;
+}
+header nav ul li a {
+  color: #283546;
+  text-decoration: none;
+}
+header nav.activo {
+  height: 350px;
+}
+@media screen and (min-width: 900px) {
+  header nav.activo {
+    height: auto;
+  }
+}
+
+main {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+}
+main section {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: center;
+  border: solid;
+  background-color: white;
+  gap: 1rem;
+  width: 100%;
+}
+main section h3 {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  text-decoration: underline;
+}
+main section .card-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+}
+@media screen and (min-width: 700px) {
+  main section .card-container {
+    margin: 1rem;
+  }
+}
+main .btn-up {
+  position: fixed;
+  bottom: 5rem;
+  right: 1.5rem;
+}
+@media screen and (min-width: 900px) {
+  main .btn-up {
+    right: 5rem;
+  }
+}
+main .btn-up img {
+  width: 2rem;
+  height: 2rem;
+}
+@media screen and (min-width: 900px) {
+  main .btn-up img:hover {
+    transition: all 0.5s;
+    width: 4rem;
+    height: 4rem;
+  }
+}
+main #linkCarrito {
+  height: 0vh;
+  display: none;
+  z-index: 50;
+}
+main #linkCarrito.activo {
+  display: flex;
+  height: auto;
+}
+
+/*# sourceMappingURL=style.css.map */

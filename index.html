@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- SHORTCUT ICON -->
+    <link rel="shortcut icon" href="img/ICONO.jpg" type="image/x-icon" />
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AeroPC</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header id="header">
+      <a class="logo" href="index.html"><img src="img/LOGO.jpg" alt="LOGO" /></a>
+
+      <div>
+        <button class="header__button">
+          <svg class="button__x" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+          </svg>
+          <svg class="button__menu" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+          </svg>
+        </button>
+
+        <img class="carrito" src="img/carrito-de-compras.png" alt="CARRITO" />
+      </div>
+
+      <nav class="nav">
+        <ul>
+          <li><a href="#linkGabinetes">Gabinetes</a></li>
+          <li><a href="#linkFuentes">Fuentes</a></li>
+          <li><a href="#linkPlacasMadre">Placas Madre</a></li>
+          <li><a href="#linkProcesadores">Procesadores</a></li>
+          <li><a href="#linkMemoriasRam">Memorias RAM</a></li>
+          <li><a href="#linkPlacasVideo">Placas De Video</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <section id="linkCarrito">
+        <h3>CARRITO </h3>
+        <div class="card-container" id="carrito"></div>
+        <h3 id="precio-total">CARRITO VACIO.</h3>
+      </section>
+
+      <section id="linkGabinetes">
+        <h3>GABINETES</h3>
+        <div class="card-container" id="gabinetes"></div>
+      </section>
+
+      <section id="linkFuentes">
+        <h3>FUENTES</h3>
+        <div class="card-container" id="fuentes"></div>
+      </section>
+
+      <section id="linkPlacasMadre">
+        <h3>PLACAS MADRE</h3>
+        <div class="card-container" id="placasMadre"></div>
+      </section>
+
+      <section id="linkProcesadores">
+        <h3>PROCESADORES</h3>
+        <div class="card-container" id="procesadores"></div>
+      </section>
+
+      <section id="linkMemoriasRam">
+        <h3>MEMORIAS RAM</h3>
+        <div class="card-container" id="memoriasRam"></div>
+      </section>
+
+      <section id="linkPlacasVideo">
+        <h3>PLACAS DE VIDEO </h3>
+        <div class="card-container" id="placasVideo"></div>
+      </section>
+
+      <a href="#header" class="btn-up"><img src="img/arrow-up-circle.svg" alt="boton-subir"></a>
+    </main>
+
+    <!-- FOOTER -->
+    <footer></footer>
+
+    <!-- JAVA SCRIPT -->
+    <script type="module" src="index.js"></script>
+    
+    <!-- JAVA SCRIPT BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Noto+Sans:wght@300;600;900&display=swap");
+@import "mixins";
+@import "variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comic Neue", cursive;
+  font-family: "Noto Sans", sans-serif;
+}
+
+body {
+  background-color: $background-color;
+  padding: 1rem;
+}
+
+// HEADER
+
+header {
+  @include flex(column, wrap, space-between, center);
+  border: solid;
+  background-color: white;
+  width: 100%;
+  margin-bottom: 1rem;
+  @include media-desktop() {
+    @include flex(row, wrap, space-between, center); 
+  }
+
+  a {
+    @include flex(column, wrap, space-between, center);
+
+    img {
+      height: 5rem;
+      max-width: 100%;
+    }
+  }
+  div {
+    width: 100%;
+    @include flex(row, wrap, space-between, center);
+    @include media-desktop() {
+      width: auto;
+    }
+
+    button {
+      background-color: transparent;
+      margin: 1rem;
+      border: 0;
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+
+        @include media-desktop() {
+          display: none;
+        }
+      }
+    }
+
+    .button__x {
+      display: none;
+    }
+    .button__x.activo {
+      display: block;
+      @include media-desktop() {
+        display: none;
+      }
+    }
+    .button__menu.activo {
+      display: none;
+    }
+
+    .carrito {
+      margin-right: 1.5rem;
+      height: 3rem;
+    }
+  }
+
+  nav {
+    @include flex(column, wrap, space-between, center);
+    height: 0vh;
+    width: 100%;
+    transition: all 1s ease;
+    overflow: hidden;
+    @include media-desktop() {
+      height: auto;
+    }
+
+    ul {
+      @include flex(column, wrap, space-between, center);
+      gap: 0.5rem;
+      @include media-desktop() {
+        @include flex(row, wrap, space-between, center);
+      }
+      @include media-2k(){
+        gap: 1.5rem;
+      }
+
+      li {
+        padding: 0.2rem;
+        list-style: none;
+        font-size: x-large;
+        @include media-desktop() {
+          font-size: x-large;
+          border-left: solid $background-color;
+          border-right: solid $background-color;
+          margin-bottom: 1rem;
+        }
+        @include media-2k() {
+          font-size: xx-large;
+        }
+
+        &:hover {
+          color: $verde-color;
+          a {
+            color: $verde-color;
+          }
+        }
+
+        a {
+          color: $background-color;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  nav.activo {
+    height: 350px;
+    @include media-desktop() {
+      height: auto;
+    }
+  }
+}
+
+// MAIN
+
+main {
+  @include flex(column, wrap, space-around, center);
+  gap: 1rem;
+  section {
+    @include flex(column, wrap, space-around, center);
+    border: solid;
+    background-color: white;
+    gap: 1rem;
+    width: 100%;
+    h3 {
+      @include flex(row, wrap, space-around, center);
+      text-decoration: underline;
+    }
+    .card-container {
+      @include flex(row, wrap, space-around, center);
+      gap: 1rem;
+      @include media-tablet(){
+        margin: 1rem;
+      }
+    }
+  }
+  .btn-up{
+    position: fixed;
+    bottom: 5rem;
+    right: 1.5rem;
+    @include media-desktop(){
+      right: 5rem;
+    }
+    img{
+      width: 2rem;
+      height: 2rem;
+      @include media-desktop(){
+        &:hover{
+          transition: all 0.5s;
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+    }
+  }
+
+  #linkCarrito{
+    height: 0vh;
+    display: none;
+    z-index: 50;
+  }
+  #linkCarrito.activo{
+    display: flex;
+   height: auto;
+  }
+}

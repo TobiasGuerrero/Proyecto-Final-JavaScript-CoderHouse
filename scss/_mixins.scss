@@ -1,0 +1,27 @@
+@mixin flex($dir, $wrap, $just, $aling) {
+  display: flex;
+  flex-flow: $dir $wrap;
+  justify-content: $just;
+  align-items: $aling;
+}
+@mixin grid($column, $gap) {
+  display: grid;
+  grid-template-columns: repeat($column, 1fr);
+  gap: $gap;
+}
+
+@mixin media-tablet() {
+  @media screen and (min-width: 700px) {
+    @content;
+  }
+}
+@mixin media-desktop() {
+  @media screen and (min-width: 900px) {
+    @content;
+  }
+}
+@mixin media-2k() {
+  @media screen and (min-width: 1400px) {
+    @content;
+  }
+}
