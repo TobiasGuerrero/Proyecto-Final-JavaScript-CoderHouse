@@ -89,12 +89,6 @@ function subirCarritoAlStorage(carrito){
   localStorage.setItem("carritoEnStorage", JSON.stringify(carrito));
 }
 
-function chequearCarrito(carrito){
-carrito = JSON.parse(localStorage.getItem("carritoEnStorage")) || []
-imprimirCarrito(carrito);
-console.log(carrito)
-}
-
 // ----- OBJETOS -----
 
 class producto {
@@ -116,13 +110,13 @@ document.querySelector(".header__button").addEventListener("click", () => {
 
 document.querySelector(".carrito").addEventListener("click", ()=> {
   document.getElementById("linkCarrito").classList.toggle("activo");
-  chequearCarrito(carrito);
+  imprimirCarrito(carrito);
 });
 
 // ----- MAIN -----
 
 const productos = [];
-const carrito = [];
+const carrito = JSON.parse(localStorage.getItem("carritoEnStorage")) || [];
 
 productos.push(new producto("Gabinete Sate K381 8 Coolers Rgb Vidrio Templado", 30000, "img/gabinete1.jpg", "gabinetes"));
 productos.push(new producto("Placa De Video Msi Rtx 2060 Super Oc Edition 8gb", 225000, "img/grafica1.jpg", "placasVideo"));
@@ -144,10 +138,6 @@ productos.push(new producto("Memoria Ram Kingston Fury Beast Rgb Ddr5 32gb 4800m
 productos.push(new producto("Placa De Video Nvidia Msi Gtx 1650 Gaming X 4gb", 190000, "img/grafica2.jpg", "placasVideo"));
 productos.push(new producto("Placa de video Nvidia MSI Gaming X GeForce RTX 3060 GAMING X 12G", 290000, "img/grafica3.jpg", "placasVideo"));
 
-document.querySelector(".carrito").addEventListener("click", () => {imprimirCarrito(carrito)});
-
 // ----- INICIO DEL CODIGO -----
-
-chequearCarrito(carrito);
 
 imprimirProductos(productos);
