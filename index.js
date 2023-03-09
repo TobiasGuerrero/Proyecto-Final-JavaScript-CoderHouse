@@ -90,8 +90,9 @@ function subirCarritoAlStorage(carrito){
 }
 
 function chequearCarrito(carrito){
-carrito = JSON.parse(localStorage.getItem("carritoEnStorage")) ?? []
+carrito = JSON.parse(localStorage.getItem("carritoEnStorage")) || []
 imprimirCarrito(carrito);
+console.log(carrito)
 }
 
 // ----- OBJETOS -----
@@ -115,7 +116,7 @@ document.querySelector(".header__button").addEventListener("click", () => {
 
 document.querySelector(".carrito").addEventListener("click", ()=> {
   document.getElementById("linkCarrito").classList.toggle("activo");
-  console.log(carrito)
+  chequearCarrito(carrito);
 });
 
 // ----- MAIN -----
@@ -150,5 +151,3 @@ document.querySelector(".carrito").addEventListener("click", () => {imprimirCarr
 chequearCarrito(carrito);
 
 imprimirProductos(productos);
-
-console.log(carrito)
