@@ -34,12 +34,23 @@ function imprimirProductos (productos){
   i++;
 
   }
+  imprimirCarrito(carrito);
 }
 
 function agregarAlCarrito(carrito, producto){
   carrito.push(producto);
   subirCarritoAlStorage(carrito)
-}
+
+  Toastify({
+    type: "success",
+    text: "Producto agregado al carrito",
+    position: "top-right",
+    stopOnFocus: false,
+    style: {
+      background: "linear-gradient(to right, green, black)",
+    }
+    }).showToast();
+  }
 
 function imprimirCarrito (carrito){
   
@@ -74,15 +85,23 @@ function imprimirCarrito (carrito){
 
   const precioTotal = document.getElementById("precio-total");
   carrito.reduce((acc, prod) => acc + prod.precio, 0) == 0 ? precioTotal.innerHTML = `<h3>CARRITO VACIO</h3>` : precioTotal.innerHTML = `<h3>Total: ${carrito.reduce((acc, prod) => acc + prod.precio, 0)}</h3>`;
-  // precioTotal.innerHTML = `<h3>Total: ${carrito.reduce((a, b) => a + b.precio, 0)}</h3>`;
   
+  document.getElementById("cant__prod").innerHTML = carrito.length;
 }
-
 function retirarDelCarrito(producto){
   const retirar = carrito.indexOf(producto)
   carrito.splice(retirar,1)
   imprimirCarrito(carrito)
   subirCarritoAlStorage(carrito)
+
+  Toastify({
+    text: "Producto retirado del carrito",
+    position: "top-right",
+    stopOnFocus: false,
+    style: {
+      background: "linear-gradient(to right, red, black)",
+    }
+    }).showToast();
 }
 
 function subirCarritoAlStorage(carrito){
@@ -110,7 +129,6 @@ document.querySelector(".header__button").addEventListener("click", () => {
 
 document.querySelector(".carrito").addEventListener("click", ()=> {
   document.getElementById("linkCarrito").classList.toggle("activo");
-  imprimirCarrito(carrito);
 });
 
 // ----- MAIN -----
@@ -141,3 +159,4 @@ productos.push(new producto("Placa de video Nvidia MSI Gaming X GeForce RTX 3060
 // ----- INICIO DEL CODIGO -----
 
 imprimirProductos(productos);
+

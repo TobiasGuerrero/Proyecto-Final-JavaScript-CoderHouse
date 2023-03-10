@@ -35,7 +35,8 @@ header {
       max-width: 100%;
     }
   }
-  div {
+
+  .btn__carrito {
     width: 100%;
     @include flex(row, wrap, space-between, center);
     @include media-desktop() {
@@ -70,11 +71,19 @@ header {
     .button__menu.activo {
       display: none;
     }
-
+    
+    div{
+      @include flex(row, wrap, space-between, center);
+      margin-right: 1rem
+    }
     .carrito {
-      margin-right: 1.5rem;
       height: 3rem;
     }
+    #cant__prod{
+      position: relative;
+      top: 1.4rem
+    }
+
   }
 
   nav {

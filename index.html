@@ -8,6 +8,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" />
+        <!-- Toastify CSS-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,9 +19,9 @@
   <body>
     <!-- HEADER -->
     <header id="header">
-      <a class="logo" href="index.html"><img src="img/LOGO.jpg" alt="LOGO" /></a>
+      <img src="img/LOGO.jpg" alt="LOGO" />
 
-      <div>
+      <div class="btn__carrito">
         <button class="header__button">
           <svg class="button__x" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
             <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
@@ -28,7 +31,11 @@
           </svg>
         </button>
 
-        <img class="carrito" src="img/carrito-de-compras.png" alt="CARRITO" />
+        <div>
+          <img class="carrito" src="img/carrito-de-compras.png" alt="CARRITO" />
+          <p id="cant__prod">0</p>
+        </div>
+        
       </div>
 
       <nav class="nav">
@@ -81,7 +88,7 @@
         <div class="card-container" id="placasVideo"></div>
       </section>
 
-      <a href="#header" class="btn-up"><img src="img/arrow-up-circle.svg" alt="boton-subir"></a>
+      <a href="#" class="btn-up"><img src="img/arrow-up-circle.svg" alt="boton-subir"></a>
     </main>
 
     <!-- FOOTER -->
@@ -89,6 +96,9 @@
 
     <!-- JAVA SCRIPT -->
     <script type="module" src="index.js"></script>
+
+    <!-- Toastify -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     
     <!-- JAVA SCRIPT BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>

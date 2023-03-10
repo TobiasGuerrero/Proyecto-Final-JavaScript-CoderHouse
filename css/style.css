@@ -40,7 +40,7 @@ header a img {
   height: 5rem;
   max-width: 100%;
 }
-header div {
+header .btn__carrito {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
@@ -48,42 +48,52 @@ header div {
   align-items: center;
 }
 @media screen and (min-width: 900px) {
-  header div {
+  header .btn__carrito {
     width: auto;
   }
 }
-header div button {
+header .btn__carrito button {
   background-color: transparent;
   margin: 1rem;
   border: 0;
 }
-header div button svg {
+header .btn__carrito button svg {
   width: 2rem;
   height: 2rem;
   cursor: pointer;
 }
 @media screen and (min-width: 900px) {
-  header div button svg {
+  header .btn__carrito button svg {
     display: none;
   }
 }
-header div .button__x {
+header .btn__carrito .button__x {
   display: none;
 }
-header div .button__x.activo {
+header .btn__carrito .button__x.activo {
   display: block;
 }
 @media screen and (min-width: 900px) {
-  header div .button__x.activo {
+  header .btn__carrito .button__x.activo {
     display: none;
   }
 }
-header div .button__menu.activo {
+header .btn__carrito .button__menu.activo {
   display: none;
 }
-header div .carrito {
-  margin-right: 1.5rem;
+header .btn__carrito div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 1rem;
+}
+header .btn__carrito .carrito {
   height: 3rem;
+}
+header .btn__carrito #cant__prod {
+  position: relative;
+  top: 1.4rem;
 }
 header nav {
   display: flex;
