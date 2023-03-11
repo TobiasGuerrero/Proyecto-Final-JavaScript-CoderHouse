@@ -1,0 +1,118 @@
+{
+    "producto" : [
+        {
+            "nombre": "Gabinete Sate K381 8 Coolers Rgb Vidrio Templado",
+            "precio" : 30000, 
+            "img": "img/gabinete1.jpg", 
+            "categoria": "gabinetes"
+        },
+        {
+            "nombre": "Placa De Video Msi Rtx 2060 Super Oc Edition 8gb",
+            "precio" : 225000, 
+            "img": "img/grafica1.jpg", 
+            "categoria": "placasVideo"
+        },
+        {
+            "nombre": "Motherboard Gigabyte B450m Amd Am4 Ryzen Ddr4",
+            "precio" : 35000, 
+            "img": "img/mother1.jpg", 
+            "categoria": "placasMadre"
+        },
+        {
+            "nombre": "Gabinete Gamer Sentey F10 Tira Rgb M-atx Ventana Acrílico",
+            "precio" : 19799, 
+            "img": "img/gabinete2.jpg", 
+            "categoria": "gabinetes"
+        },
+        {
+            "nombre": "Gabinete Corsair Carbide 678c Vidrio Templado White",
+            "precio" : 60930, 
+            "img": "img/gabinete3.jpg", 
+            "categoria": "gabinetes"
+        },
+        {
+            "nombre": "Gabinete Thermaltake Divider 370 Tg Argb Snow Mid Tower",
+            "precio" : 65220, 
+            "img": "img/gabinete4.jpg", 
+            "categoria": "gabinetes"
+        },
+        {
+            "nombre": "Fuente de alimentación Thermaltake Technology Smart BX1 750W black",
+            "precio" : 34500, 
+            "img": "img/fuente1.jpg", 
+            "categoria": "fuentes"
+        },
+        {
+            "nombre": "Fuente de alimentación LNZ SX Series SX850-FS 850W negra 115V/230V",
+            "precio" : 20000, 
+            "img": "img/fuente2.jpg", 
+            "categoria": "fuentes"
+        },
+        {
+            "nombre": "Fuente Pc Corsair Gamer Cv750 750w 80 Plus Bronze",
+            "precio" : 29000, 
+            "img": "img/fuente3.jpg", 
+            "categoria": "fuentes"
+        },
+        {
+            "nombre": "Mother Board Gamer Gigabyte Z690 Gaming X Ddr4 Intel Gen 12",
+            "precio" : 105000, 
+            "img": "img/mother2.jpg", 
+            "categoria": "placasMadre"
+        },
+        {
+            "nombre": "Mother Board Gamer Msi Mag B660m Mortar Ddr4 Intel Gen 12",
+            "precio" : 65999, 
+            "img": "img/mother3.jpg", 
+            "categoria": "placasMadre"
+        },
+        {
+            "nombre": "Procesador Intel Core I3-12110f 4 Núcleos 4.3ghz Frecuencia",
+            "precio" : 42500, 
+            "img": "img/procesador1.jpg", 
+            "categoria": "procesadores"
+        },
+        {
+            "nombre": "Procesador Intel Core I5 12420 20mb 2.50 Ghz Socket 1700",
+            "precio" : 82800, 
+            "img": "img/procesador2.jpg", 
+            "categoria": "procesadores"
+        },
+        {
+            "nombre": "Procesador Intel Core i7-12730F de 12 núcleos y 4.9GHz de frecuencia",
+            "precio" : 149000, 
+            "img": "img/procesador3.jpg", 
+            "categoria": "procesadores"
+        },
+        {
+            "nombre": "Memoria RAM Fury Beast DDR4 gamer color negro 8GB 1 Kingston KF432C16BB/8",
+            "precio" : 13000, 
+            "img": "img/ram1.jpg", 
+            "categoria": "memoriasRam"
+        },
+        {
+            "nombre": "Memoria Ram U-dimm Adata Xpg Ddr5 16gb 5600mhz Pcreg",
+            "precio" : 48500, 
+            "img": "img/ram2.jpg", 
+            "categoria": "memoriasRam"
+        },
+        {
+            "nombre": "Memoria Ram Kingston Fury Beast Rgb Ddr5 32gb 4800mhz Intel",
+            "precio" : 114500, 
+            "img": "img/ram3.jpg", 
+            "categoria": "memoriasRam"
+        },
+        {
+            "nombre": "Placa De Video Nvidia Msi Gtx 1650 Gaming X 4gb",
+            "precio" : 190000, 
+            "img": "img/grafica2.jpg", 
+            "categoria": "placasVideo"
+        },
+        {
+            "nombre": "Placa de video Nvidia MSI Gaming X GeForce RTX 3060 GAMING X 12G",
+            "precio" : 290000, 
+            "img": "img/grafica3.jpg", 
+            "categoria": "placasVideo"
+        }
+    ]
+}
