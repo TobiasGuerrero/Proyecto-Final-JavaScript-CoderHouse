@@ -146,7 +146,11 @@ header {
 
 main {
   @include flex(column, wrap, space-around, center);
-  gap: 1rem;
+  #div__main{
+    @include flex(column, wrap, space-around, center);
+    gap: 1rem;
+    width: 100%;
+  }
   section {
     @include flex(column, wrap, space-around, center);
     border: solid;
@@ -186,12 +190,20 @@ main {
   }
 
   #linkCarrito{
-    height: 0vh;
     display: none;
     z-index: 50;
   }
   #linkCarrito.activo{
     display: flex;
-   height: auto;
+    height: auto;
+  }
+
+  #btn__pagar{
+    border-radius: 2rem;
+    padding: 0.5rem;
+    margin: 1rem;
+    &:hover{
+      border-color: red;
+    }
   }
 }

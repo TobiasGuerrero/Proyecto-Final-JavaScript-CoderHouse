@@ -1,6 +1,37 @@
 // ----- FUNCIONES -----
 
-function imprimirProductos (){
+function imprimirHTML(){
+  const contenedor = document.getElementById("div__main");
+  contenedor.innerHTML = `
+        <section id="linkGabinetes">
+          <h3>GABINETES</h3>
+          <div class="card-container" id="gabinetes"></div>
+        </section>
+
+        <section id="linkFuentes">
+          <h3>FUENTES</h3>
+          <div class="card-container" id="fuentes"></div>
+        </section>
+
+        <section id="linkPlacasMadre">
+          <h3>PLACAS MADRE</h3>
+          <div class="card-container" id="placasMadre"></div>
+        </section>
+
+        <section id="linkProcesadores">
+          <h3>PROCESADORES</h3>
+          <div class="card-container" id="procesadores"></div>
+        </section>
+
+        <section id="linkMemoriasRam">
+          <h3>MEMORIAS RAM</h3>
+          <div class="card-container" id="memoriasRam"></div>
+        </section>
+
+        <section id="linkPlacasVideo">
+          <h3>PLACAS DE VIDEO </h3>
+          <div class="card-container" id="placasVideo"></div>
+        </section>`;
 
   let i = 0;
 
@@ -43,9 +74,22 @@ function imprimirProductos (){
 }
 
 function agregarAlCarrito(carrito, producto){
-  carrito.push(producto);
-  subirCarritoAlStorage(carrito)
+  console.log(carrito.length)
+  if(carrito.length == 0){
+    carrito.push(producto);
+    producto.cant++;
+  }else{
+    const buscar = carrito.indexOf(producto);
+    if(buscar == -1){
+      carrito.push(producto);
+      producto.cant++;
+    }else{
+      carrito[buscar].cant++;
+    }
+  }
 
+  subirCarritoAlStorage(carrito)
+  
   Toastify({
     type: "success",
     text: "Producto agregado al carrito",
@@ -54,10 +98,21 @@ function agregarAlCarrito(carrito, producto){
     style: {
       background: "linear-gradient(to right, green, black)",
     }
-    }).showToast();
-  }
+  }).showToast();
+}
 
 function imprimirCarrito (carrito){
+
+  const carro = document.getElementById("linkCarrito");
+  carro.innerHTML = "";
+  carro.innerHTML= `
+  
+  <h3>CARRITO </h3>
+  <div class="card-container" id="carrito"></div>
+  <h3 id="precio-total">CARRITO VACIO.</h3>
+  <div id="div__pagar"></div>
+  
+  `;
   
   let i=0;
   const contenedor = document.getElementById("carrito")
@@ -73,7 +128,7 @@ function imprimirCarrito (carrito){
     <img class="card-img-top" src="${producto.img}" alt="Card image cap" style="width: 100%;height: 15rem;">
       <div class="card-body" style="display:flex; flex-direction: column; justify-content: space-between;">
         <h5 class="card-title">${producto.nombre}</h5>
-        <p class="card-text">$${producto.precio}</p>
+        <p class="card-text">$${producto.precio} - Cantidad:${producto.cant}</p>
         <button id= "btnRetirar${i}" class="btn btn-primary">Retirar del Carrito</button>
       </div>
   </div>
@@ -89,13 +144,20 @@ function imprimirCarrito (carrito){
   }
 
   const precioTotal = document.getElementById("precio-total");
-  carrito.reduce((acc, prod) => acc + prod.precio, 0) == 0 ? precioTotal.innerHTML = `<h3>CARRITO VACIO</h3>` : precioTotal.innerHTML = `<h3>Total: ${carrito.reduce((acc, prod) => acc + prod.precio, 0)}</h3>`;
+  carrito.reduce((acc, prod) => acc + prod.precio, 0) == 0 ? precioTotal.innerHTML = `<h3>CARRITO VACIO</h3>` : precioTotal.innerHTML = `<h3>Total: ${carrito.reduce((acc, prod) => acc + prod.precio*prod.cant, 0)}</h3>`;
   
-  document.getElementById("cant__prod").innerHTML = carrito.length;
+  const cantTotalProd = document.getElementById("cant__prod");
+  carrito.reduce((acc, prod) => acc + prod.cant, 0) == 0 ? cantTotalProd.innerHTML = 0 : cantTotalProd.innerHTML = carrito.reduce((acc, prod) => acc + prod.cant, 0);
+
+  realizarPago(carrito);
 }
+
 function retirarDelCarrito(producto){
+
   const retirar = carrito.indexOf(producto)
-  carrito.splice(retirar,1)
+  carrito[retirar].cant--
+  carrito[retirar].cant == 0 && carrito.splice(retirar, 1);
+
   imprimirCarrito(carrito)
   subirCarritoAlStorage(carrito)
 
@@ -113,6 +175,23 @@ function subirCarritoAlStorage(carrito){
   localStorage.setItem("carritoEnStorage", JSON.stringify(carrito));
 }
 
+function vaciarCarrito(carrito){
+  carrito = [];
+  subirCarritoAlStorage(carrito);
+  imprimirCarrito(carrito);
+}
+
+function realizarPago(carrito){
+  if(carrito.length != 0){
+  const contenedor = document.getElementById("div__pagar");
+  contenedor.innerHTML = `<button id="btn__pagar">Realizar Compra.</button>`;
+
+  document.getElementById("btn__pagar").addEventListener("click", ()=>{
+    swal("Compra Realizada con exito.", "Gracias por su compra!.", "success");
+    vaciarCarrito(carrito);
+  })}else{document.getElementById("div__pagar").innerHTML = ""}
+}
+
 // ----- HEADER -----
 
 document.querySelector(".header__button").addEventListener("click", () => {
@@ -123,6 +202,7 @@ document.querySelector(".header__button").addEventListener("click", () => {
 
 document.querySelector(".carrito").addEventListener("click", ()=> {
   document.getElementById("linkCarrito").classList.toggle("activo");
+  document.querySelector(".activo") != null ? document.getElementById("div__main").innerHTML="" : location.reload();
 });
 
 // ----- MAIN -----
@@ -131,5 +211,4 @@ const carrito = JSON.parse(localStorage.getItem("carritoEnStorage")) || [];
 
 // ----- INICIO DEL CODIGO -----
 
-imprimirProductos();
-
+imprimirHTML();

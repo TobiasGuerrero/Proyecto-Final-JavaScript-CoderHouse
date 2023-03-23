@@ -172,7 +172,14 @@ main {
   flex-flow: column wrap;
   justify-content: space-around;
   align-items: center;
+}
+main #div__main {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: center;
   gap: 1rem;
+  width: 100%;
 }
 main section {
   display: flex;
@@ -225,13 +232,20 @@ main .btn-up img {
   }
 }
 main #linkCarrito {
-  height: 0vh;
   display: none;
   z-index: 50;
 }
 main #linkCarrito.activo {
   display: flex;
   height: auto;
+}
+main #btn__pagar {
+  border-radius: 2rem;
+  padding: 0.5rem;
+  margin: 1rem;
+}
+main #btn__pagar:hover {
+  border-color: red;
 }
 
 /*# sourceMappingURL=style.css.map */
